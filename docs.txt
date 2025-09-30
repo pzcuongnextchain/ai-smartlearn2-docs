@@ -1,0 +1,701 @@
+Here is all the text from the provided PDF content:
+
+Page 1:
+AI Smart Learning Renewal
+Feature Description
+
+Page 2:
+AI Smart Learning Renewal Core Feature Description
+
+Change to Administrator SaaS Structure:
+-> Configuration of a function to create multiple administrators (sub-administrators) in addition to the super administrator
+-> When a sub-administrator logs in, only the content they have registered (students/instructors/lectures of their own company) is displayed and can be managed (CRUD)
+-> The logo registered by the sub-administrator is displayed to both administrators and users
+-> The super administrator can manage all data
+
+Complete Replacement of AI Practice Tool:
+-> Introduction of a practice tool through https://www.edenai.co/
+-> Integration with other AI tool APIs for features not provided by Eden, such as video generation
+-> Change of practice tool UI through https://www.assistant-ui.com/
+-> Implementation so that sub-administrators can register their own API keys (to handle token cost issues)
+
+Providing Recommended Videos through AI Chatbot (We would like to discuss the best methodology for this part)
+-> Add script content/hashtags, etc. to videos registered in the recommended video management function (https://ai.nextchain.kr/admin/content-management/recommended-videos), and after the AI chatbot converses with the student, it provides recommended lectures among the registered lectures
+-> Please check whether it would be better to use the RAG method or if there are other possible methods
+
+Page 3:
+Items deleted from the existing AI Smart Learning menu
+금요일평생교육원
+Fridayedu
+회원관리
+수강생
+교강사
+컨텐츠 관리
+차시별 동영상 관리
+O/X 시뮬레이션
+VR O/X 시뮬레이션
+추천 동영상 관리
+AI API 업무 진행 관리
+AI API 노출 관리
+사전설문
+
+Delete video management by session
+
+Delete OX simulation
+
+Delete VR O/X simulation
+
+Delete AI API task progress management: Changed to AI practice tool management
+
+Delete pre-survey
+*Display logo image registered by sub-administrator
+
+Page 4:
+Member Management > Edit Student Section
+https://ai.nextchain.kr/admin/member-management/students
+황선화 의 정보
+이름
+황선화
+비밀번호
+aaaa1111
+수강일정
+09/05/2025
+나이
+업무분야
+직책
+학습목표
+기본정보
+X
+ID
+rws7539
+교강사
+조병현
+12/05/2025
+로그인 토큰
+ZmYzODk2YmJjMzAyNjU3MDhmZTQ3OGM3NzQ4ZGNIMWQxYjAwNDgyODUyZTgyZTQ4ODRhODUxOWRjNTNhNzZhYTVjYWYxMTBkMDg4N2VkODNmZDCONTA
+수정
+Delete everything except Name, ID, Password, Instructor, Course Schedule, and Login Token
+Since we will not be conducting a pre-survey, delete everything related to it as well.
+Login token value is required.
+
+Change password to *******
+
+Password encryption required (SHA256)
+
+Page 5:
+Member Management > Students > Edit Learning View Section
+https://ai.nextchain.kr/admin/member-management/students
+회원관리-수강생 리스트
+
+등록하기
+
+수강생 일괄등록하기
+↓수강생 리스트 다운로드
+ID나 수강생명으로 검색
+번호
+이름
+ID
+정보보기
+학습보기
+과제보기
+1
+황선화
+rws7539
+2
+황미애
+rws5908
+3
+홍주영
+rws7998
+4
+홍유정
+rws3977
+5
+홍숙경
+rws1554
+6
+홍수희
+rws3271
+7
+홍가연
+rws0613
+8
+형지애
+rws8648
+9
+현혜빈
+rws2116
+10
+허미
+rws7769
+<
+1
+2
+3
+4
+5
+460
+
+조회
+
+When clicked, display the list of Al-recommended video lectures (same as before)
+
+When clicked, view the content of the practice tool used
+-> Same as before
+-> However, previously it was "Task instruction (chat window format) -> Select AI tool -> Use AI tool -> Task report (chat window format)", but in the updated version, only the "Use AI tool" page exists
+
+The same applies to viewing assignments; in the updated version, only the "Use AI tool" page exists
+
+Page 6:
+Member Management > Instructor section modification
+https://ai.nextchain.kr/admin/member-management/teachers
+회원관리 - 교강사 리스트
+번호
+이름
+ID
+비밀번호
+교강사 등록
+0001
+Teacher test
+teacher-test@gmail.com
+test12345
+이름
+0002
+Next Chain teacher
+NC_teacher@gmail.com
+test12345
+0003
+Onboarding screens
+Test
+123456
+ID
+0004
+Vivi
+olpipipip
+pipipipipl
+0005
+Spike Spiegel
+spikespiegel@gmail.com
+test12345
+비밀번호 생성
+0006
+Wren Evans
+wren-evans@gmail.com
+test12345
+0007
+Cowboy Bebop
+cowboy-bebop@gmail.com
+test12345
+0008
+Karatina Rose
+katarina-rose@gmail.com
+test12345
+0009
+itsjinhk
+itsjinhk
+123123123
+0010
+Test
+Test@12345
+test12345
+<
+1
+2
+3
+
+등록하기
+
+Change password to *******
+
+Password encryption required (SHA256)
+-> Change to allow instructor information to be edited
+
+However, when an instructor logs in, they should not see other menus and should only be able to view their own students (same as current)
+
+Page 7:
+Content Management > Edit Recommended Videos
+https://ai.nextchain.kr/admin/content-management/recommended-videos
+컨텐츠관리-추천동영상 관리
+1차시
+The web URL is configured to appear differently for each sub-administrator
+Web Url
+https://ai.nextchain.kr/session/recommend-video-setting/1
+0
+
+동영상 추가
+우선순위 추천동영상
+순서
+제목
+우선순위
+댓글
+좋아요
+작업
+1
+[4차 산업혁명 주요 기술] 인공지능
+Y
+2 [댓글 보기]
+2
+=
+2
+[4차 산업혁명 주요 기술] 4차 산업혁명에서 빅데이터의 역할
+Y
+2 [댓글 보기]
+0
+=
+3
+[4차 산업혁명 주요 기술] 인공지능과 빅데이터의 융합 사례
+Y
+2 [댓글 보기]
+0
+=
+추가적인 동영상
+순서
+제목
+우선순위
+댓글
+좋아요
+작업
+4
+[4차 산업혁명 주요 기술] 4차 산업혁명에서 인공지능의 역할
+N
+0 [댓글 보기]
+0
+=
+Priority recommended videos are deleted
+Recommended videos are provided from among the
+videos registered for each individual student through the
+Al chatbot.
+5
+[4차 산업혁명 주요 기술] 빅데이터
+N
+0 [댓글 보기]
+0
+=
+6
+[4차 산업혁명 주요 기술] 사물인터넷
+N
+0 [댓글 보기]
+0
+=
+7
+[4차 산업혁명 주요 기술] 4차 산업혁명에서 사물인터넷의 역할
+N
+0 [댓글 보기]
+0
+=
+8
+[4차 산업혁명 주요 기술] 인공지능과 사물인터넷의 융합 사례
+N
+0 [댓글 보기]
+0
+=
+9
+[4차 산업혁명 주요 기술] 블록체인
+N
+0 [댓글 보기]
+0
+=
+10
+[4차 산업혁명 주요 기술] 4차 산업혁명에서 블록체인의 역할
+N
+0 [댓글 보기]
+0
+=
+11
+[4차 산업혁명 주요 기술] 로보틱스와 자동화
+N
+0 [댓글 보기]
+0
+=
+12
+[4차 산업혁명 주요 기술] 4차 산업혁명에서 로보틱스와 자동화의 역할
+N
+0 [댓글 보기]
+1
+=
+13
+[4차 산업혁명 주요 기술] 가상현실 및 증강현실
+N
+0 [댓글 보기]
+0
+
+Page 8:
+Content Management > Edit Recommended Videos
+https://ai.nextchain.kr/admin/content-management/recommended-videos
+컨텐츠관리-추천동영상 관리
+시
+추천동영상 수정
+X
+Delete Priority
+Web Url https://ai.nex
+차시
+1순위 추천동영상
+1차시
+순서
+우선순위
+3
+순서
+좋아요
+제목
+1
+[4
+2
+[4차 산업혁명 주요 기술] 인공지능과 빅데이터의 융합 사례
+2
+[4
+0
+내역
+3
+[4
+0
+인공지능 기반의 개인화 추천 시스템, 자율 주행 차량, 의료 진단 및 예측, 스마트 시티, 금융 사기 탐지
+추가적인 동영상
+순서
+동영상 경로
+https://media.fridayedu.com/contents/SMART01/web/data/01/02_05.mp4
+4
+[4
+5
+[4
+썸네일
+Add an area to register video content or script content to enable AI recommendations
+좋아요
+0
+파일 선택
+6
+[4
+https://pub-89628e9debc746f7822670fd7d22d9c3.r2.dev/AI_SMART_LEARNING/1751546118416-d4t
+0
+7
+[4차
+태그 (선택 사항)
+8
+[4차
+9
+[4차
+10
+[4
+11
+[4大
+12
+[4차 산업혁명 주요 기술] 4차 산업혁명에서 로보틱스와 자동화의 역할
+N
+0 [댓글 보기]
+0
+0
+Add an area to register the initial screen text content of the
+AI Recommendation chat
+window (description on the next
+page)
+취소
+저장
+0
+
+Page 9:
+Student Page -> AI Video Recommendation Process Order -1 (Recommendations via AI Chatbot)
+-> Need to discuss methodology ideas for this feature
+[스마트러닝]내년에도 일하고 싶다면 무조건 인공지능 AutoWork!
+이제 이미지 생성은 인공지능으로 해결
+Hello there!
+How can I help you today?
+What's the weather
+in San Francisco?
+Help me write an essay
+about Al chat applications
+12/15
+Display the first message for this session registered by the administrator
+(Example: Mr./Ms. ooo, the content of this session is 0000000. If you let us know your current job and practical experience, we will provide you with a combination of recommended lecture videos. If you want basic lectures, please answer, "No".)
+IFrame Area
+Send a message...
++
+↑
+Configure so that recommended lectures for the next page are displayed through conversation with the student
+(Methodology ideas needed)
+
+Page 10:
+Student Page -> AI Video Recommendation Process -2 (Display and settings of recommended lecture list: same structure as before)
+[스마트러닝]내년에도 일하고 싶다면 무조건 인공지능 AutoWork!
+이제 이미지 생성은 인공지능으로 해결
+이심사 사원 님 AI 맞춤형/개별화 알고리즘에 따라 아래 강의를 추천 드립니다.
+Midjourney, Leonardo. Ai
+레오나르도 AI(Leonardo. Ai)
+Midjourney, Leonardo. Ai
+미드저니 이미지 생성 방법
+[Midjourney, Leonardo. Ai] ...
+타임라인, 이미지 확인, 프롬프트, Upscale(U)
+버튼, Variation(V) 버튼
+[Midjourney, Leonardo. Ai]
+레오나르도 AI(Leonardo. Ai), 텍스트를 이미지
+로 변환하는 인공지능, 직관적인 인터페이...
+제거
+강의 설정은 강의 시간이 5분 이상이어야 구성됩니다.
+추천강의 추가 리스트
+제거
+12/15
+추천강의 합산시간 : 3분0초
+List of videos recommended by AI
+Automatic setting function not
+available
+->When clicked, it is set up to
+randomly add more than 5
+minutes
+자동 설정
+전체제거
+설정완료
+Midjourney, Leonardo. Ai
+미드저니 사용을 위한
+디스코드 가입 방법
+Midjourney, Leonardo. Ai
+미드저니 구독 형태
+[Midjourney, Leonardo. Ai] 미드저...
+[Midjourney, Leonardo. Ai] 미드저...
+Midjourney, Leonardo. Ai
+레오나르도 AI 가입 방법
+[Midjourney, Leonardo. Ai] 레오나...
+
+Page 11:
+Student Page -> AI Video Recommendation Process -3 (Learning the Set Course: Same Structure as Before)
+[스마트러닝]내년에도 일하고 싶다면 무조건 인공지능 AutoWork!
+이제 이미지 생성은 인공지능으로 해결
+이심사 사원님을 위한 맞춤형 추천 강의 진행 - 5차시
+• Midjourney, Leonardo. Ai
+※ 미드저니 이미지 생성 방법
+0:00/1:51
+U2
+U3
+U4
+V3
+강의 진행 리스트
+12/15
+Midjourney, Leonardo. Ai
+미드저니 이미지 생성 방법
+[Midjourney, Leonardo. Ai] 미
+드저니 이미지 생성 방법
+타임라인, 이미지 확인, 프롬프트,
+Upscale(U) 버튼, Variation(V) 버튼
+타임라인에서 이미지 확인
+타임라인에 나타나는 이미지는 다른 사용자가 생성한 이미지
+왼쪽 사이드바의 "newbies-"서버는 공공장소
+실시간으로 다른 사람들이 이미지를 생성하고 프롬프트(입력어를 볼 수 있음
+Midjourney, Leonardo. Ai
+레오나르도 AI(Leonardo. Ai)
+[Midjourney, Leonardo. Ai] 레
+오나르도 AI(Leonardo. Ai)
+레오나르도 AI(Leonardo. Ai), 텍스트
+를 이미지로 변환하는 인공지능, 직관...
+프롬프트 입력
+이미지를 생성하기 위해 하단의 입력창에 프롬프트를 입력
+"/image"을 입력하면 자동완성으로 명령어가 나타남
+자동완성 된 명령어 중 "/imagine prompt"를 클릭하고, "prompt'에 해당하는 입력어를 작성
+Midjourney, Leonardo. Ai
+레오나르도 AI 가입 방법
+[Midjourney, Leonardo. Ai] 레
+오나르도 AI 가입 방법
+레오나르도 AI 사이트
+(https://leonardo.ai), 화이트리스팅...
+[Midjourney, Leonardo. Ai] 미드저니 이미지 생성 방법
+1 댓글
+댓글 추가...
+박지선 2년 전
+Midjourney, Leonardo. Ai
+미드저니 구독 형태
+[Midjourney, Leonardo. Ai] 미
+드저니 구독 형태
+미드저니 구독 형태, 저속 모드, 스텔스
+모드, 패스트 모드, 동시 작업 수
+Same as the previous structure
+
+Page 12:
+Content Management > AI Practice Tool Management Configuration – List
+1차시
+2차시
+3차시
+4차시
+5차시
+6차시
+7차시
+8차시
+9차시
+10차시
+11차시
+12차시
+
+Delete all contents of the existing "Content Management - AI API Task Progress Management"
+
+Change to allow registration as Practice Sessions 1~40, like Recommended Video Management
+
+Add Assignments 110 (same structure as Practice Sessions 140)
+
+Page 13:
+Content Management > AI Practice Tool Management Configuration – Details
+1차시
+Web Url https://ai.nextchain.kr/session/recommend-video-setting/1
+0
+Provide practice URL for each session
+Provide different URLs for each sub-administrator
+Pre-practice message
+Practice tool setting (Add)
+ChatGPT 5
+(Delete)
+(Delete)
+(Delete)
+(Delete)
+(Delete)
+Register the content of the layer message window displayed before practice (HTML editor)
+Add/Delete tools to be set for each session among the set AI tools
+(Previously, students set this themselves, but now only the practice window set by the administrator is displayed)
+
+Page 14:
+Student page -> AI practice window progress order -1 (practice message display)
+ChatGPT 5 프롬프트 실습
+프롬프트를 입력하고 Enter (또는 /Ctrl+Enter)로 전송
+Comm
+rm
+보내기
+gpt-5-mini (빠름)
+첨삭 패널
+기록 초기화
+프롬프트 첨삭
+JSON 형식 제약조건
+Display pre-practice guidance message layer window
+
+Page 15:
+Student Page -> AI Practice Window Progress Order -2 (Practice in Progress)
+• ChatGPT 5 프롬프트 실습
+Practice Window
+https://www.assistant-ui.com/
+Introduction
+(Current window is a sample
+Exactiple)tool selection is inserted as a
+select box at the top
+-> Only the practice tools set by the
+administrator for each session are
+displayed
+A function that analyzes the prompt
+entered by the student using the GPT
+API and provides problem points and
+improvement suggestions
+(I have the code for this example. I
+can provide all the files.)
+https://promptlab-vercel-ready.vercel
+.app/
+내가 프롬프트 엔지니어링 강의를 진행할 예정인데, 어떤 순서로 하면 좋을지 알려줘
+25. 9. 13. 오후 4:28
+아래는 프롬프트 엔지니어링 강의를 효율적으로 구성하는 권장 순서와 각 세션에서 다룰 내용,
+시간 배분 및 활동 제안입니다. 필요에 따라 대상(초급/중급/고급), 총 강의시간(한 회 워크숍 vs
+여러 회) 등을 알려주시면 맞춤으로 조정해 드립니다.
+
+개요 및 목표 설정 (10-15분)
+강의 목적·학습 목표·예상 산출물 제시
+참석자 수준(사전지식) 확인 및 기대조사
+전체 커리큘럼과 평가 방식(실습/과제) 안내
+
+배경 지식: LLM과 프롬프트의 관계 (20-30분)
+대형언어모델(LLM)의 작동 원리(간단히)와 한계
+프롬프트가 결과에 미치는 영향(예시를 통한 직관적 이해)
+용어 정리: 시스템/유저/어시스턴트 메시지, 샷(샘플), 컨텍스트
+
+기본 원칙과 설계 패턴 (30-40분)
+명확성·구체성·제한(제약)·출력형식 고정화
+역할부여(Role prompting), 예시 제시(0/1/few-shot)
+프롬프트 템플릿과 재사용 가능한 컴포넌트
+간단 실습: 동일 목표에 대해 3가지 다른 프롬프트 작성해 비교
+
+고급 기법과 추론 보조 (40-60분)
+체인오브쏘트(Chain-of-Thought), 단계적 분해(Prompt decomposition)
+
+코칭 스타일(힌트·가이드 방식)과 반례 유도
+오ㄷ.ㅌ크제하치대으다기이 드 파라미디 조저버
+프롬프트를 입력하고 Enter (또는 /Ctrl+Enter)로 전송
+보내기
+75
+불명확한대상
+세부요구없음
+시간제약누락 형식미지정
+안전·윤리조건언급없음
+문제점
+• 대상(초급/중급/고급)과 사전지식이 명시
+되어 있지 않음
+• 총 강의시간(한 회 워크숍인지 여러 회인
+지)을 지정하지 않음
+• 특정한 포맷(강의만/워크숍/실습 중심)과
+평가 방식에 대한 요구가 없음
+• 언어, 도구(어떤 모델/API) 등 기술적 제약
+이 주어지지 않음
+• 특정 결과물(슬라이드 길이, 예제 수 등)에
+대한 출력 형식 요구가 없음
+개선 제안
+• 청중의 수준(입문/실무/연구)을 명시해 주
+세요 - 그러면 난이도와 예제를 맞출 수
+있습니다.
+• 총 강의시간과 세션 수(예: 3시간 단회/6
+주 과정)를 알려 주세요.
+• 강의 형식(이론 중심/실습 중심/혼합)과
+사용 가능한 리소스(모델 접근권, 노트북)
+를 알려 주세요.
+• 원하시는 출력물 형식(타임테이블, 슬라이
+드 목차, 실습 과제지)을 지정해 주세요.
+
+Page 16:
+Content Management > AI Practice API Management Configuration
+https://ai.nextchain.kr/admin/content-management/ai-tools-display
+컨텐츠관리- AI API 관리
+Same On/Off Function
+Replace with the newly set up tool this time (about 100 or so)
+for super admin
+if turn off -> sub-admin can not turn on
+if turn on -> sub-admin can turn on
+for sub-admin
+-> turn on/off
+by api key working or not
+-> -> to student to show
+맡김 AI
+감성 분석
+비속어 추출
+키워드 추출
+OpenAl
+위스퍼
+이미지 생성
+Dall-E3 (OpenAl)
+추가 AI
+비토
+AI API
+장면 분할
+객체검출
+법률 QA
+네이버 클라우드
+파파고 번역기
+CLOVA 보이스
+KaKao
+OFF
+OFF
+OFF
+ON
+OFF
+ON
+ON
+ON
+ON
+OFF
+OFF
+OFF
+ON
+OFF
+ON
+OFF
+ON
+OFF
+OFF
+OFF
+감성어 추출
+주제어 추출
+GPT-4.0 터보
+문장 패러프레이즈 인식 기술
+음성인식 기술
+행정문서 QA
+파파고 이미지 번역기제어 추출
+GPT-4.0 터보
+문장 패러프레이즈 인식 기술
+음성인식 기술
+행정문서 QA
+파파고 이미지 번역기
