@@ -73,38 +73,34 @@ flowchart TD
     V --> W[Log Transfer Operation]
 ```
 
-### Global Analytics and Reporting Flow
+### Global Student Chat Log Access Flow
 ```mermaid
 flowchart TD
-    A[Super Admin Access Analytics] --> B[Global Analytics Dashboard]
-    B --> C{Report Type}
+    A[Super Admin Access Student Work] --> B[Student Work Dashboard]
+    B --> C{Select View Type}
     
-    C -->|Platform Overview| D[System-Wide Metrics]
-    C -->|Organization Comparison| E[Cross-Org Analysis]
-    C -->|User Analytics| F[Global User Metrics]
-    C -->|Content Performance| G[Global Content Analytics]
-    C -->|AI Tool Usage| H[Global Tool Analytics]
+    C -->|Learning View 학습보기| D[AI-Recommended Videos]
+    C -->|Assignment View 과제보기| E[AI Tool Usage & Chat Logs]
+    C -->|Practice Sessions| F[Practice Tool Chat Logs]
+    C -->|All Chat Logs| G[Global Chat Log Search]
     
-    D --> I[Aggregate All Data]
-    E --> J[Compare Organizations]
-    F --> K[Analyze User Patterns]
-    G --> L[Analyze Content Effectiveness]
-    H --> M[Analyze Tool Usage]
+    D --> H[Display Video Recommendations by Organization]
+    E --> I[Display AI Tool Conversations]
+    F --> J[Display Practice Session Chats]
+    G --> K[Search All Student Conversations]
     
-    I --> N[Generate Platform Report]
-    J --> O[Generate Comparison Report]
-    K --> P[Generate User Report]
-    L --> Q[Generate Content Report]
-    M --> R[Generate Tool Report]
+    H --> L[Filter by Organization]
+    I --> M[View Chat History]
+    J --> N[View Practice Tool Usage]
+    K --> O[Filter Chat Logs]
     
-    N --> S[Export Global Data]
-    O --> S
-    P --> S
-    Q --> S
-    R --> S
+    L --> P[Export Student Data]
+    M --> P
+    N --> P
+    O --> P
     
-    S --> T[Schedule Automated Reports]
-    T --> U[Distribute to Stakeholders]
+    P --> Q[Generate Student Work Report]
+    Q --> R[Notify Organizations if Needed]
 ```
 
 ## Sequence Diagrams
@@ -137,7 +133,7 @@ sequenceDiagram
     participant Validator as Operation Validator
     participant OrgA as Organization A Database
     participant OrgB as Organization B Database
-    participant Logger as Audit Logger
+    participant Logger as Operation Logger
     
     SA->>UI: Initiate cross-org operation
     UI->>Validator: Validate operation scope
@@ -252,9 +248,9 @@ flowchart TD
     ManageGlobalUsers --> NotifyOrganizations
     ManageGlobalTools --> NotifyOrganizations
     
-    MonitorPerformance --> OptimizeGlobally[Optimize Global Performance]
-    OptimizeGlobally --> GenerateGlobalReports[Generate Global Reports]
-    NotifyOrganizations --> GenerateGlobalReports
+    MonitorPerformance --> CheckGlobalStatus[Check Global System Status]
+    CheckGlobalStatus --> GenerateBasicReports[Generate Basic System Reports]
+    NotifyOrganizations --> GenerateBasicReports
     
     GenerateGlobalReports --> PlanImprovements[Plan Platform Improvements]
     PlanImprovements --> End([Complete Global Management])
@@ -315,14 +311,14 @@ graph TB
     GlobalSystem --> UC3[Monitor Platform Health]
     GlobalSystem --> UC4[Handle Cross-Org Operations]
     GlobalSystem --> UC5[Maintain Data Consistency]
-    GlobalSystem --> UC6[Generate Platform Analytics]
+    GlobalSystem --> UC6[Access Student Chat Logs]
     
     UC1 --> DataAggregator[Data Aggregation Service]
     UC2 --> PolicyEngine[Policy Enforcement Engine]
     UC3 --> HealthMonitor[Platform Health Monitor]
     UC4 --> CrossOrgHandler[Cross-Org Operation Handler]
     UC5 --> ConsistencyManager[Data Consistency Manager]
-    UC6 --> AnalyticsEngine[Global Analytics Engine]
+    UC6 --> ChatLogEngine[Global Chat Log Access Engine]
 ```
 
 ## Component Interaction Diagrams
@@ -376,7 +372,7 @@ graph TB
     PlatformMonitor --> GlobalDB
 ```
 
-### Real-time Global Synchronization
+### Global Data Synchronization
 ```mermaid
 graph LR
     subgraph "Global Changes"
@@ -423,16 +419,16 @@ flowchart TD
     DT -->|Content| ContentCRUD[Content CRUD]
     DT -->|Assignments| AssignmentCRUD[Assignment CRUD]
     DT -->|AI Tools| ToolCRUD[AI Tool CRUD]
-    DT -->|Analytics| AnalyticsCRUD[Analytics CRUD]
-    DT -->|Security| SecurityCRUD[Security CRUD]
+    DT -->|Chat Logs| ChatLogCRUD[Chat Log Access]
+    DT -->|System Config| SystemCRUD[System Configuration CRUD]
     
     OrgCRUD --> CRUD{CRUD Operation}
     UserCRUD --> CRUD
     ContentCRUD --> CRUD
     AssignmentCRUD --> CRUD
     ToolCRUD --> CRUD
-    AnalyticsCRUD --> CRUD
-    SecurityCRUD --> CRUD
+    ChatLogCRUD --> CRUD
+    SystemCRUD --> CRUD
     
     CRUD -->|Create| CreateFlow[Create New Data]
     CRUD -->|Read| ReadFlow[View/Search Data]
@@ -448,10 +444,10 @@ flowchart TD
     Filter --> Display[Display Results]
     ConfirmDelete --> Execute
     
-    Execute --> Audit[Log Operation]
+    Execute --> LogOp[Log Operation]
     Display --> Export[Export Option]
     
-    Audit --> Notify[Notify Affected Parties]
+    LogOp --> Notify[Notify Affected Parties]
     Export --> Complete[Operation Complete]
     Notify --> Complete
 ```
@@ -509,92 +505,68 @@ flowchart TD
     ContinueMonitoring --> Complete
 ```
 
-### Global Security Management Flow
+### Global System Management Flow
 ```mermaid
 flowchart TD
-    SA[Super Administrator] --> GSM[Global Security Management]
-    GSM --> ST{Security Task}
+    SA[Super Administrator] --> GSM[Global System Management]
+    GSM --> ST{System Task}
     
     ST -->|Access Control| AccessFlow[Manage Access Control]
-    ST -->|Audit Logs| AuditFlow[Review Audit Logs]
-    ST -->|Compliance| ComplianceFlow[Compliance Management]
-    ST -->|Incident Response| IncidentFlow[Security Incident Response]
-    ST -->|Vulnerability| VulnFlow[Vulnerability Management]
+    ST -->|Operation Logs| LogFlow[Review Operation Logs]
+    ST -->|System Health| HealthFlow[System Health Management]
     
     AccessFlow --> ViewPermissions[View All Permissions]
     ViewPermissions --> ModifyAccess[Modify Access Rights]
     ModifyAccess --> TestAccess[Test Access Changes]
     TestAccess --> ApplyChanges[Apply Changes]
     
-    AuditFlow --> FilterLogs[Filter Audit Logs]
+    LogFlow --> FilterLogs[Filter Operation Logs]
     FilterLogs --> AnalyzeLogs[Analyze Log Patterns]
-    AnalyzeLogs --> GenerateReport[Generate Security Report]
+    AnalyzeLogs --> GenerateReport[Generate System Report]
     
-    ComplianceFlow --> CheckCompliance[Check Compliance Status]
-    CheckCompliance --> IdentifyGaps[Identify Compliance Gaps]
-    IdentifyGaps --> CreatePlan[Create Remediation Plan]
+    HealthFlow --> CheckHealth[Check System Health]
+    CheckHealth --> IdentifyIssues[Identify System Issues]
+    IdentifyIssues --> CreatePlan[Create Resolution Plan]
     CreatePlan --> ImplementFixes[Implement Fixes]
     
-    IncidentFlow --> DetectIncident[Detect Security Incident]
-    DetectIncident --> AssessImpact[Assess Impact]
-    AssessImpact --> ContainThreat[Contain Threat]
-    ContainThreat --> InvestigateIncident[Investigate Incident]
-    InvestigateIncident --> RecoverSystems[Recover Systems]
-    
-    VulnFlow --> ScanVulnerabilities[Scan for Vulnerabilities]
-    ScanVulnerabilities --> PrioritizeVulns[Prioritize Vulnerabilities]
-    PrioritizeVulns --> PatchVulns[Patch Vulnerabilities]
-    PatchVulns --> VerifyPatches[Verify Patches]
-    
-    ApplyChanges --> SecurityComplete[Security Task Complete]
-    GenerateReport --> SecurityComplete
-    ImplementFixes --> SecurityComplete
-    RecoverSystems --> SecurityComplete
-    VerifyPatches --> SecurityComplete
+    ApplyChanges --> SystemComplete[System Task Complete]
+    GenerateReport --> SystemComplete
+    ImplementFixes --> SystemComplete
 ```
 
-### Global Analytics and Reporting Management Flow
+### Global Student Work and Chat Log Management Flow
 ```mermaid
 flowchart TD
-    SA[Super Administrator] --> GAR[Global Analytics & Reporting]
-    GAR --> RT{Report Type}
+    SA[Super Administrator] --> SWM[Student Work Management]
+    SWM --> WT{Work Type}
     
-    RT -->|Usage Analytics| UsageFlow[Usage Analytics]
-    RT -->|Performance Metrics| PerfFlow[Performance Metrics]
-    RT -->|Financial Reports| FinFlow[Financial Reports]
-    RT -->|Compliance Reports| CompFlow[Compliance Reports]
-    RT -->|Custom Reports| CustomFlow[Custom Reports]
+    WT -->|Learning View| LearningFlow[AI Video Recommendations]
+    WT -->|Assignment View| AssignmentFlow[AI Tool Chat Logs]
+    WT -->|Practice Sessions| PracticeFlow[Practice Tool Usage]
+    WT -->|All Chat Logs| ChatFlow[All Student Conversations]
     
-    UsageFlow --> SelectMetrics[Select Usage Metrics]
-    SelectMetrics --> SetTimeframe[Set Time Frame]
-    SetTimeframe --> AggregateData[Aggregate Usage Data]
+    LearningFlow --> SelectOrg[Select Organization]
+    AssignmentFlow --> SelectStudent[Select Student]
+    PracticeFlow --> SelectSession[Select Practice Session]
+    ChatFlow --> SearchCriteria[Define Search Criteria]
     
-    PerfFlow --> SelectKPIs[Select Performance KPIs]
-    SelectKPIs --> CollectMetrics[Collect Performance Data]
-    CollectMetrics --> AnalyzePerformance[Analyze Performance]
+    SelectOrg --> ViewVideos[View AI-Recommended Videos]
+    SelectStudent --> ViewChatLogs[View AI Tool Chat Logs]
+    SelectSession --> ViewPractice[View Practice Tool Usage]
+    SearchCriteria --> SearchChats[Search All Chat Logs]
     
-    FinFlow --> SelectFinMetrics[Select Financial Metrics]
-    SelectFinMetrics --> CalculateCosts[Calculate Costs]
-    CalculateCosts --> GenerateFinReport[Generate Financial Report]
+    ViewVideos --> FilterContent[Filter by Content Type]
+    ViewChatLogs --> FilterByTool[Filter by AI Tool]
+    ViewPractice --> FilterBySession[Filter by Session Number]
+    SearchChats --> FilterByDate[Filter by Date Range]
     
-    CompFlow --> SelectCompliance[Select Compliance Framework]
-    SelectCompliance --> AssessCompliance[Assess Compliance Status]
-    AssessCompliance --> GenerateCompReport[Generate Compliance Report]
+    FilterContent --> ExportData[Export Student Work Data]
+    FilterByTool --> ExportData
+    FilterBySession --> ExportData
+    FilterByDate --> ExportData
     
-    CustomFlow --> DefineParameters[Define Report Parameters]
-    DefineParameters --> BuildQuery[Build Custom Query]
-    BuildQuery --> ExecuteQuery[Execute Query]
-    
-    AggregateData --> VisualizeData[Create Visualizations]
-    AnalyzePerformance --> VisualizeData
-    GenerateFinReport --> VisualizeData
-    GenerateCompReport --> VisualizeData
-    ExecuteQuery --> VisualizeData
-    
-    VisualizeData --> ExportReport[Export Report]
-    ExportReport --> ScheduleReport[Schedule Automated Reports]
-    ScheduleReport --> DistributeReport[Distribute Report]
-    DistributeReport --> ArchiveReport[Archive Report]
+    ExportData --> NotifyOrgs[Notify Organizations if Needed]
+    NotifyOrgs --> ArchiveData[Archive Student Work Data]
 ```
 
 ### Cross-Organizational Bulk Operations Flow
@@ -662,7 +634,7 @@ flowchart TD
     SHM --> MonitorType{Monitor Type}
     
     MonitorType -->|Real-time Monitoring| RealTimeFlow[Real-time System Monitor]
-    MonitorType -->|Performance Analysis| PerfAnalysis[Performance Analysis]
+    MonitorType -->|System Status| SystemStatus[System Status Check]
     MonitorType -->|Capacity Planning| CapacityFlow[Capacity Planning]
     MonitorType -->|Incident Management| IncidentMgmt[Incident Management]
     
@@ -679,10 +651,10 @@ flowchart TD
     ClassifyAlert --> NotifyAdmins[Notify Administrators]
     NotifyAdmins --> InitiateResponse[Initiate Response]
     
-    PerfAnalysis --> CollectPerfData[Collect Performance Data]
-    CollectPerfData --> AnalyzeTrends[Analyze Performance Trends]
-    AnalyzeTrends --> IdentifyBottlenecks[Identify Bottlenecks]
-    IdentifyBottlenecks --> RecommendOptimizations[Recommend Optimizations]
+    SystemStatus --> CheckSystemData[Check System Data]
+    CheckSystemData --> ReviewStatus[Review System Status]
+    ReviewStatus --> IdentifyIssues[Identify System Issues]
+    IdentifyIssues --> RecommendActions[Recommend Basic Actions]
     
     CapacityFlow --> AnalyzeUsage[Analyze Current Usage]
     AnalyzeUsage --> ProjectGrowth[Project Growth Patterns]
@@ -697,7 +669,7 @@ flowchart TD
     
     InitiateResponse --> MonitoringComplete[Monitoring Task Complete]
     ContinueMonitoring --> MonitoringComplete
-    RecommendOptimizations --> MonitoringComplete
+    RecommendActions --> MonitoringComplete
     RecommendScaling --> MonitoringComplete
     PostIncidentReview --> MonitoringComplete
 ```

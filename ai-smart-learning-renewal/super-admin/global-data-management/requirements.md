@@ -33,8 +33,8 @@ This means super admin has access to ALL features that sub-administrators have, 
 1. WHEN super administrator accesses assignments THEN the system SHALL display all assignments (1-10) from ALL organizations
 2. WHEN super administrator manages assignments THEN the system SHALL allow creation, modification, and deletion across organizations
 3. WHEN super administrator views submissions THEN the system SHALL show student work from all organizations
-4. WHEN super administrator configures grading THEN the system SHALL manage grading criteria and rubrics globally
-5. WHEN super administrator monitors assignments THEN the system SHALL provide cross-organizational analytics and reporting
+4. WHEN super administrator views assignment work THEN the system SHALL show AI tool usage and chat logs from all students
+5. WHEN super administrator monitors assignments THEN the system SHALL access assignment work across all organizations
 
 ### Global AI Tool Configuration
 1. WHEN super administrator manages AI tools THEN the system SHALL configure tools for ALL organizations
@@ -46,23 +46,23 @@ This means super admin has access to ALL features that sub-administrators have, 
 ### Global Branding Management
 1. WHEN super administrator manages branding THEN the system SHALL view and modify logos and branding for ALL organizations
 2. WHEN super administrator updates branding THEN the system SHALL apply changes to specific organizations or globally
-3. WHEN super administrator monitors branding THEN the system SHALL ensure brand compliance across all organizations
+3. WHEN super administrator monitors branding THEN the system SHALL ensure brand consistency across all organizations
 4. WHEN super administrator manages assets THEN the system SHALL access and modify branding assets for any organization
 5. WHEN super administrator sets defaults THEN the system SHALL establish default branding for new organizations
 
-### Global Student Progress Monitoring
-1. WHEN super administrator views student progress THEN the system SHALL display learning data from ALL organizations
-2. WHEN super administrator accesses AI recommendations THEN the system SHALL view video recommendations across all organizations
-3. WHEN super administrator monitors practice tools THEN the system SHALL see AI tool usage and chat logs from all students
-4. WHEN super administrator reviews assignments THEN the system SHALL access assignment work from all organizations
-5. WHEN super administrator generates reports THEN the system SHALL create cross-organizational analytics and insights
+### Global Student Work and Chat Log Monitoring
+1. WHEN super administrator views student learning (학습보기) THEN the system SHALL display AI-recommended video lectures from ALL organizations
+2. WHEN super administrator accesses assignment view (과제보기) THEN the system SHALL view AI tool usage and chat logs across all organizations
+3. WHEN super administrator monitors practice tools THEN the system SHALL see all AI tool conversations and chat logs from students
+4. WHEN super administrator reviews assignments (1-10) THEN the system SHALL access AI tool usage pages from all organizations
+5. WHEN super administrator views practice sessions (1-40) THEN the system SHALL display AI tool chat logs and usage history from all students
 
 ### Cross-Organizational Operations
 1. WHEN super administrator transfers data THEN the system SHALL support moving students, instructors, or content between organizations
 2. WHEN super administrator merges organizations THEN the system SHALL combine organizational data while maintaining integrity
 3. WHEN super administrator creates templates THEN the system SHALL establish templates that can be applied to multiple organizations
 4. WHEN super administrator performs bulk operations THEN the system SHALL execute operations across organizational boundaries
-5. WHEN super administrator manages compliance THEN the system SHALL ensure all organizations meet platform standards
+5. WHEN super administrator manages organizations THEN the system SHALL ensure all organizations meet platform requirements
 
 ## Business Rules
 
@@ -76,8 +76,9 @@ This means super admin has access to ALL features that sub-administrators have, 
 - All content (videos, sessions, assignments) across all organizations
 - All users (students, instructors, sub-administrators) system-wide
 - All AI tool configurations and usage data globally
+- All AI tool chat logs and conversation history from all students
 - All branding and customization settings across organizations
-- All learning progress and analytics data platform-wide
+- All student learning and assignment work data platform-wide
 
 ### Organizational Oversight
 - Can view and modify organizational settings and configurations
@@ -91,7 +92,7 @@ This means super admin has access to ALL features that sub-administrators have, 
 1. WHEN super administrator queries data THEN the system SHALL remove all organizational filters and restrictions
 2. WHEN super administrator performs operations THEN the system SHALL bypass organizational scope limitations
 3. WHEN super administrator views interfaces THEN the system SHALL display organizational context for all data
-4. WHEN super administrator manages data THEN the system SHALL maintain audit trails for cross-organizational operations
+4. WHEN super administrator manages data THEN the system SHALL maintain operation logs for cross-organizational operations
 
 ### Cross-Organizational Interface
 1. WHEN super administrator accesses management interfaces THEN the system SHALL provide organization selection and filtering options
@@ -99,11 +100,11 @@ This means super admin has access to ALL features that sub-administrators have, 
 3. WHEN super administrator performs bulk operations THEN the system SHALL provide organization-aware batch processing
 4. WHEN super administrator generates reports THEN the system SHALL support both organizational and global reporting views
 
-### Security and Audit
-1. WHEN super administrator performs operations THEN the system SHALL log all actions with organizational context
-2. WHEN super administrator accesses sensitive data THEN the system SHALL maintain detailed audit trails
+### System Operations
+1. WHEN super administrator performs operations THEN the system SHALL log basic operation information
+2. WHEN super administrator accesses data THEN the system SHALL maintain operation records
 3. WHEN super administrator makes changes THEN the system SHALL notify affected organizations when appropriate
-4. WHEN super administrator manages permissions THEN the system SHALL ensure changes don't compromise security
+4. WHEN super administrator manages permissions THEN the system SHALL ensure proper access control
 
 ### Performance and Scalability
 1. WHEN super administrator queries large datasets THEN the system SHALL optimize queries for cross-organizational data access
@@ -129,7 +130,7 @@ This means super admin has access to ALL features that sub-administrators have, 
 - Access to all videos, sessions, and assignments across organizations
 - Cross-organizational content search and filtering
 - Bulk content operations and management
-- Content quality and compliance monitoring
+- Content quality monitoring
 
 ### Global User Management
 - System-wide user directory and management
@@ -139,9 +140,9 @@ This means super admin has access to ALL features that sub-administrators have, 
 
 ### Global AI Tool Management
 - Master control over all AI tools and configurations
-- Cross-organizational usage monitoring and analytics
-- Global API key management and cost oversight
-- Tool performance and reliability monitoring
+- Cross-organizational AI tool usage and chat log access
+- Global API key management and basic cost tracking
+- AI tool availability and basic status monitoring
 
 ## Integration Requirements
 
@@ -157,11 +158,11 @@ This means super admin has access to ALL features that sub-administrators have, 
 - Cross-organizational data synchronization and integrity
 - Global backup and disaster recovery capabilities
 
-### Platform-Wide Analytics
-- Aggregate data from all organizations for platform insights
-- Cross-organizational performance comparisons and benchmarking
-- Global usage patterns and trend analysis
-- Platform-wide optimization recommendations
+### Platform-Wide Data Access
+- Access to data from all organizations for management purposes
+- Cross-organizational data viewing and management
+- Global AI tool usage and chat log access
+- Platform-wide data management capabilities
 
 ## Success Metrics
 - Access to 100% of platform data across all organizations
@@ -174,10 +175,17 @@ This means super admin has access to ALL features that sub-administrators have, 
 ## Dependencies
 - Multi-tenant data architecture with global access capabilities
 - Cross-organizational permission and security systems
-- Global audit logging and monitoring infrastructure
+- Global operation logging and monitoring infrastructure
 - Scalable data processing and analytics platforms
 - All sub-administrator feature systems (content, users, AI tools, branding)
 - Platform-wide backup and disaster recovery systems
+
+### Student Chat Log and AI Tool Usage Access
+1. WHEN super administrator accesses student work THEN the system SHALL provide complete access to AI tool chat logs from all students across all organizations
+2. WHEN super administrator views assignment work THEN the system SHALL display AI tool usage pages with full conversation history
+3. WHEN super administrator monitors practice sessions THEN the system SHALL show all AI tool interactions and chat conversations
+4. WHEN super administrator reviews student activity THEN the system SHALL provide access to all AI chatbot conversations and tool usage
+5. WHEN super administrator searches chat logs THEN the system SHALL allow filtering and searching across all student AI tool conversations
 
 ## Extended Data Management Capabilities
 
@@ -208,14 +216,14 @@ This means super admin has access to ALL features that sub-administrators have, 
   - User account merging and splitting operations
   - Bulk user operations and mass updates
 
-### 12. Assignment and Assessment Management
-- **Global Assignment Control**
-  - Assignment template creation and management
-  - Cross-organizational assignment distribution
-  - Grading standardization and calibration
-  - Assessment analytics and performance insights
-  - Assignment plagiarism detection and prevention
-  - Bulk assignment operations and management
+### 12. Assignment and AI Tool Usage Management
+- **Global Assignment and Chat Log Access**
+  - Assignment viewing across all organizations (1-10 assignments per session)
+  - AI tool usage monitoring and chat log access
+  - Student practice session monitoring (1-40 sessions)
+  - Cross-organizational assignment access
+  - AI tool chat history and usage tracking
+  - Bulk assignment viewing operations
 
 ### 13. Financial and Billing Data Management
 - **Revenue and Cost Management**
@@ -224,7 +232,7 @@ This means super admin has access to ALL features that sub-administrators have, 
   - Revenue analytics and financial reporting
   - Payment processing and transaction management
   - Cost optimization recommendations
-  - Financial audit trails and compliance
+  - Financial tracking and reporting
 
 ### 14. Integration and API Management
 - **External System Integration**
@@ -253,56 +261,56 @@ This means super admin has access to ALL features that sub-administrators have, 
 4. WHEN bulk operations are performed THEN the system SHALL maintain data consistency across all organizations
 5. WHEN cross-organizational transfers occur THEN the system SHALL ensure referential integrity is maintained
 
-### Advanced Analytics and Machine Learning
-1. WHEN super administrator accesses analytics THEN the system SHALL provide predictive insights and trend analysis
-2. WHEN performance issues are detected THEN the system SHALL automatically recommend optimization strategies
-3. WHEN usage patterns change THEN the system SHALL alert super administrator to potential capacity needs
-4. WHEN anomalies are detected THEN the system SHALL provide automated investigation and reporting capabilities
-5. WHEN optimization opportunities exist THEN the system SHALL suggest efficiency improvements
+### AI Tool Usage Monitoring
+1. WHEN super administrator accesses AI tool data THEN the system SHALL provide basic usage information
+2. WHEN system issues are detected THEN the system SHALL provide basic system status information
+3. WHEN usage data is needed THEN the system SHALL show AI tool usage across organizations
+4. WHEN chat logs are requested THEN the system SHALL provide access to student AI tool conversations
+5. WHEN tool monitoring is needed THEN the system SHALL show basic AI tool functionality status
 
-### Compliance and Governance
-1. WHEN regulatory requirements change THEN the system SHALL automatically assess compliance impact across all organizations
-2. WHEN data governance policies are updated THEN the system SHALL enforce new policies globally
-3. WHEN audit requests are received THEN the system SHALL provide comprehensive audit trails and documentation
-4. WHEN privacy regulations apply THEN the system SHALL ensure data handling compliance across all organizations
-5. WHEN retention policies are enforced THEN the system SHALL automatically manage data lifecycle according to regulations
+### System Management
+1. WHEN system configuration changes THEN the system SHALL apply updates across all organizations
+2. WHEN global policies are updated THEN the system SHALL enforce new policies globally
+3. WHEN data operations are performed THEN the system SHALL maintain basic operation logs
+4. WHEN system maintenance is required THEN the system SHALL coordinate maintenance across all organizations
+5. WHEN backup operations are performed THEN the system SHALL ensure data backup across all organizations
 
-### Performance and Scalability
-1. WHEN system load increases THEN the system SHALL automatically scale resources to maintain performance
-2. WHEN database queries are slow THEN the system SHALL provide query optimization recommendations
-3. WHEN storage capacity is low THEN the system SHALL alert super administrator and suggest expansion options
-4. WHEN network latency affects performance THEN the system SHALL provide geographic optimization recommendations
-5. WHEN concurrent users increase THEN the system SHALL maintain response times within acceptable limits
+### Basic System Operations
+1. WHEN system load increases THEN the system SHALL maintain basic functionality
+2. WHEN database queries are needed THEN the system SHALL provide data access across organizations
+3. WHEN storage is needed THEN the system SHALL manage data storage requirements
+4. WHEN system access is required THEN the system SHALL provide cross-organizational access
+5. WHEN users access the system THEN the system SHALL maintain organizational data separation
 
 ## Super Administrator Dashboard Requirements
 
 ### Executive Summary Dashboard
-- Real-time platform health and status indicators
-- Key performance metrics across all organizations
-- Critical alerts and notifications requiring immediate attention
-- Quick access to most frequently used management functions
-- Platform-wide usage statistics and trends
+- Basic platform status indicators
+- Organization overview and access
+- System alerts and notifications
+- Quick access to management functions
+- Basic usage information across organizations
 
 ### Organization Overview Dashboard
-- List of all organizations with status and health indicators
-- Organization performance comparisons and benchmarking
-- Resource utilization across organizations
-- Growth trends and capacity planning insights
-- Organization-specific alerts and notifications
+- List of all organizations with basic status
+- Organization data access and management
+- Basic resource information across organizations
+- Organization-specific information and access
+- Organization alerts and notifications
 
 ### Global Operations Dashboard
 - Active cross-organizational operations and their status
-- Scheduled maintenance and system updates
-- Global configuration changes and their impact
-- System performance metrics and optimization opportunities
-- Integration status and health monitoring
+- System maintenance and updates
+- Global configuration changes
+- Basic system status information
+- AI tool integration status
 
-### Analytics and Reporting Dashboard
-- Customizable report generation and scheduling
-- Data visualization and interactive charts
-- Export capabilities for various formats
-- Historical trend analysis and forecasting
-- Compliance and audit reporting tools
+### Student Work and Chat Log Dashboard
+- Access to all student AI tool usage and chat logs
+- Assignment work viewing across organizations (1-10 assignments)
+- Practice session monitoring across organizations (1-40 sessions)
+- AI tool conversation history access
+- Basic data export capabilities
 
 ## Data Management Workflows
 
@@ -338,17 +346,17 @@ This means super admin has access to ALL features that sub-administrators have, 
    - Assess organization performance and needs
    - Coordinate with development and support teams
 
-2. **Compliance and Governance**
-   - Review compliance status across organizations
-   - Update policies and procedures as needed
-   - Conduct security and privacy assessments
-   - Generate compliance reports for stakeholders
+2. **System Management**
+   - Review system status across organizations
+   - Update system configurations as needed
+   - Monitor system performance and health
+   - Generate system reports for stakeholders
 
-3. **Analytics and Reporting**
-   - Generate weekly performance reports
-   - Analyze user engagement and learning outcomes
-   - Review financial and cost metrics
-   - Prepare executive summaries and insights
+3. **Data Review and Management**
+   - Review student AI tool usage and chat logs
+   - Monitor user activity across organizations
+   - Review basic cost and usage information
+   - Prepare basic system status summaries
 
 ### Monthly Operations Workflow
 1. **Platform Assessment**
@@ -380,21 +388,21 @@ This means super admin has access to ALL features that sub-administrators have, 
 ### Business Impact Metrics
 - Platform growth rate across organizations
 - Cost optimization achieved through global management
-- Compliance adherence across all organizations
+- System performance across all organizations
 - Revenue impact of global optimization initiatives
 
 ### Technical Excellence Metrics
 - Database performance and optimization effectiveness
-- Security incident response time and resolution
+- System issue response time and resolution
 - Data quality and consistency across organizations
 - Integration reliability and performance
 
 ## Risk Management and Mitigation
 
-### Data Security Risks
-- **Risk**: Unauthorized access to cross-organizational data
-- **Mitigation**: Multi-factor authentication, role-based access control, audit logging
-- **Monitoring**: Real-time access monitoring, anomaly detection, regular security assessments
+### Data Access Management
+- **Requirement**: Proper access control to cross-organizational data
+- **Implementation**: Role-based access control, basic operation logging
+- **Monitoring**: Access monitoring and basic system health checks
 
 ### System Performance Risks
 - **Risk**: Performance degradation due to cross-organizational operations
@@ -406,10 +414,10 @@ This means super admin has access to ALL features that sub-administrators have, 
 - **Mitigation**: Transaction management, data validation, backup and recovery procedures
 - **Monitoring**: Data integrity checks, consistency validation, automated testing
 
-### Compliance Risks
-- **Risk**: Non-compliance with data protection regulations
-- **Mitigation**: Privacy by design, automated compliance checks, regular audits
-- **Monitoring**: Compliance dashboards, regulatory change tracking, audit trails
+### System Reliability
+- **Requirement**: Reliable system operation across organizations
+- **Implementation**: System monitoring, automated health checks, regular maintenance
+- **Monitoring**: System dashboards, performance tracking, operation logs
 
 ## Future Enhancements
 

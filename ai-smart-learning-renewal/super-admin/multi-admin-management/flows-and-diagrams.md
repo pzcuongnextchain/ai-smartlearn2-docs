@@ -27,7 +27,7 @@ flowchart TD
     C --> D[Load Organization Dashboard]
     D --> E[Display Org-Specific Data]
     E --> F{User Attempts Cross-Org Access?}
-    F -->|Yes| G[Block Access] --> H[Log Security Event]
+    F -->|Yes| G[Block Access] --> H[Log Access Event]
     F -->|No| I[Continue Normal Operation]
     H --> J[Notify Super Admin]
     I --> K[Track User Activity]
@@ -187,7 +187,7 @@ stateDiagram-v2
     Displayed --> Isolated: Session End
     
     Accessible --> Blocked: Invalid Access Attempt
-    Blocked --> Logged: Security Event
+    Blocked --> Logged: Access Event
     Logged --> Isolated: Return to Safe State
 ```
 

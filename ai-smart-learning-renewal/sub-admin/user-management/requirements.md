@@ -68,7 +68,7 @@ As a sub-administrator, I want to manage students and instructors with simplifie
 ### User Authentication System
 1. WHEN users log in THEN the system SHALL validate credentials against SHA256 encrypted passwords
 2. WHEN login tokens are generated THEN the system SHALL ensure uniqueness and proper expiration handling
-3. WHEN authentication fails THEN the system SHALL implement proper rate limiting and security measures
+3. WHEN authentication fails THEN the system SHALL handle login errors appropriately
 4. WHEN sessions are managed THEN the system SHALL maintain organizational context throughout user session
 
 ### Bulk Import Processing
@@ -131,7 +131,7 @@ As a sub-administrator, I want to manage students and instructors with simplifie
 - Single sign-on across all platform components
 - Session management maintains organizational context
 - Password reset functionality with secure token generation
-- Multi-factor authentication support for enhanced security
+- Basic authentication with SHA256 password encryption
 
 ### Analytics and Reporting Integration
 - User activity data feeds into organizational analytics

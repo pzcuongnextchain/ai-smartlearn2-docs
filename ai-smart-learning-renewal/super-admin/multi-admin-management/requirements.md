@@ -43,7 +43,7 @@ As a super administrator, I want to create and manage multiple sub-administrator
 ### Security Requirements
 - All organizational data must be logically separated in database
 - API calls must include organizational context for proper filtering
-- Audit logs must track cross-organizational access attempts
+- Operation logs must track cross-organizational access
 - Sub-administrator permissions cannot exceed super administrator settings
 
 ## Technical Requirements
@@ -62,8 +62,8 @@ As a super administrator, I want to create and manage multiple sub-administrator
 
 ## Success Metrics
 - Sub-administrator creation time < 5 minutes
-- Zero cross-organizational data leakage incidents
-- 100% data isolation compliance in security audits
+- Zero cross-organizational data access errors
+- 100% data isolation maintained
 - Sub-administrator onboarding completion rate > 90%
 
 ## Dependencies
